@@ -27,7 +27,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="container font-montserrat  mx-auto">
+    <section className="container font-montserrat  mx-auto">
       {fetchError && <div>{fetchError}</div>}
       {smoothies && (
         <div className="container xl:grid-cols-3 grid grid-cols-1 sm:grid-cols-2 gap-14 w-11/12 mx-auto py-8">
@@ -41,7 +41,7 @@ const Home = () => {
           ))}
         </div>
       )}
-    </div>
+    </section>
   );
 };
 
