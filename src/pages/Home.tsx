@@ -1,12 +1,7 @@
 import supabase from "../config/supabaseClient";
 import { useEffect, useState } from "react";
 import SmoothieCard from "../components/SmoothieCard";
-
-type Smoothie = {
-  title: string;
-  method: string;
-  rating: number;
-};
+import { Smoothie } from "../types/api";
 
 const Home = () => {
   const [fetchError, setFetchError] = useState<string | null>(null);
@@ -30,13 +25,15 @@ const Home = () => {
 
     fetchSmoothies();
   }, []);
+
   return (
-    <div className="container">
+    <div className="container font-montserrat  mx-auto">
       {fetchError && <div>{fetchError}</div>}
       {smoothies && (
-        <div>
+        <div className="container xl:grid-cols-3 grid grid-cols-1 sm:grid-cols-2 gap-14 w-11/12 mx-auto py-8">
           {smoothies.map((smoothie) => (
             <SmoothieCard
+              key={smoothie.title}
               title={smoothie.title}
               method={smoothie.method}
               rating={smoothie.rating}
