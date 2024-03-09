@@ -52,9 +52,8 @@ const Create = () => {
           />
 
           <label htmlFor="method">Method: </label>
-          <input
-            className="p-2 text-fuchsia-800 bg-indigo-50"
-            type="text"
+          <textarea
+            className="p-2 h-32 text-fuchsia-800 bg-indigo-50"
             id="method"
             value={method}
             onChange={(e) => setMethod(e.target.value)}
